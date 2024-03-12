@@ -8,12 +8,12 @@ public class UserController {
 
     @GetMapping("/join-form")
     public String joinForm() {
-        return "user/join-form";
+        return "join-form";
     }
 
     @GetMapping("/login-form")
     public String loginForm() {
-        return "user/login-form";
+        return "login-form";
     }
 
     @GetMapping("/user/update-form")
