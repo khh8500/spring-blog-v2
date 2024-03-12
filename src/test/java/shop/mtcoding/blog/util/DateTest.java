@@ -31,6 +31,6 @@ public class DateTest {
         String formattedDate = DateFormatUtils.format(currentDate, "yyyy-MM-dd HH:mm");
 
         // 포맷된 날짜 출력
-        System.out.println("Format_test : " + formattedDate);
+        System.out.println("format_test : " + formattedDate);
     }
 }

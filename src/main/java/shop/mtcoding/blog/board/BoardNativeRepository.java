@@ -13,11 +13,17 @@ import java.util.List;
 public class BoardNativeRepository {
     private final EntityManager em;
 
-    @Transactional
+    public Board findById(int id) {
+        Query query = em.createNativeQuery("select * from board_tb where id = ?", Board.class);
+        query.setParameter(1, id);
+        return (Board) query.getSingleResult();
+    }
+
     public List<Board> findAll() {
         Query query = em.createNativeQuery("select * from board_tb order by id desc", Board.class);
         return (List<Board>) query.getResultList();
     }
+
     @Transactional
     public void save(String title, String content, String username){
         Query query = em.createNativeQuery("insert into board_tb(title, content, username, created_at) values (?,?,?, now())");
